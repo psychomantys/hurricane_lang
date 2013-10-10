@@ -29,6 +29,7 @@ ADD_EXECUTABLE(hurricane
 	${HURRICANE_SOURCES}
 )
 target_link_libraries(hurricane "-lboost_system -lboost_program_options -lpthread -pthread")
+set (CMAKE_CXX_FLAGS "-std=c++0x")
 
 if(UNIX)
 	add_custom_target(distclean @echo cleaning for source distribution)

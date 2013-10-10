@@ -3,36 +3,38 @@
  *
  *       Filename:  main.cpp
  *
- *    Description:  
+ *    Description:  Arquivo principal
  *
  *        Version:  1.0
  *        Created:  10-10-2013 16:57:17
  *       Revision:  none
- *       Compiler:  gcc
+ *       Compiler:  g++
  *
- *         Author:  YOUR NAME (), 
- *        Company:  
+ *         Author:  Psycho Mantys, Jonathas
  *
  * =====================================================================================
  */
 #include	<hurricane/config.hpp>
 
 //g++ -lboost_program_options -lboost_system -std=c++0x -Wall (Maybe...)
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
+#include	<iostream>
+#include	<fstream>
+#include	<vector>
+#include	<string>
 
 // Boost...
-#include <boost/program_options.hpp>
+#include	<boost/program_options.hpp>
 
 using std::vector;
 using std::string;
 using std::unique_ptr;
 using std::ofstream;
 using std::ifstream;
+using std::istream;
+using std::ostream;
 using std::cout;
 using std::cin;
+using std::cerr;
 using std::endl;
 
 namespace po=boost::program_options;
