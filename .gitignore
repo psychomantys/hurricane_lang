@@ -31,3 +31,11 @@ a.out
 # svn
 .svn
 
+
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+hurricane
+config.hpp
+
