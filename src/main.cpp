@@ -41,8 +41,6 @@ namespace po=boost::program_options;
 
 
 int main( int argc, char* argv[]){
-	unsigned int pivo=30;
-
 	const char *config_file_name="config.cfg";
 	po::variables_map vm;
 
@@ -55,26 +53,20 @@ int main( int argc, char* argv[]){
 		po::options_description parameters_environment;
 
 		po::options_description parameters_input("Opções de entrada");
-		po::options_description parameters_generic("Opções genéricas");
 
 		// Começa a tratar opções passadas ao programa
-		parameters_generic.add_options()
-			("pivo,p", po::value<unsigned int>(&pivo)->default_value(pivo),"Numero para usar como pivo")
-			;
 		parameters_input.add_options()
 			("help,h", "produce help message")
 			("input,i", po::value< vector<string> >(), "Arquivo de entrada para o programa")
 			("output,o", po::value< vector<string> >(), "Arquivo de saída")
 			;
 
-		parameters_cmd_line.add(parameters_generic).add(parameters_input);
-		parameters_config_file.add(parameters_generic);
-		parameters_environment.add(parameters_generic);
+		parameters_cmd_line.add(parameters_input);
 
 		po::positional_options_description positional_opt;
 		positional_opt.add("input", -1);
 
-		po::store( po::parse_environment(parameters_environment,"SORT_"), vm);
+		po::store( po::parse_environment(parameters_environment,"HURRICANEC_"), vm);
 		po::store( po::command_line_parser(argc, argv).options(parameters_cmd_line).positional(positional_opt).run(), vm);
 		ifstream config_file(config_file_name);
 
